@@ -8,12 +8,13 @@ The running example is **MiniDesk**, a customer-support agent. It starts tiny an
 
 ## Lessons
 
-| # | Lesson | Code |
-|---|--------|------|
-| 1 | What Is an Agent, Really? | concepts only |
-| 2 | Underneath the Agent | concepts only |
-| 3 | Build Your First Agent | [`lessons/lesson-03-build-your-first-agent`](lessons/lesson-03-build-your-first-agent) |
-| 4 | The Agent Loop, Live | coming soon |
+| # | Lesson | Video | Code |
+|---|--------|-------|------|
+| 1 | What Is an Agent, Really? | [▶ watch](https://youtu.be/xaMoPaBLgO4) | concepts only |
+| 2 | Underneath the Agent | [▶ watch](https://youtu.be/lrfp7W4Qs3Q) | concepts only |
+| 3 | Build Your First Agent | [▶ watch](https://youtu.be/JpsG3ZiXJak) | [`lessons/lesson-03-build-your-first-agent`](lessons/lesson-03-build-your-first-agent) |
+| 4 | The Agent Loop, Live | [▶ watch](https://youtu.be/IT-3lbmWOeM) | [`lessons/lesson-04-the-agent-loop-live`](lessons/lesson-04-the-agent-loop-live) |
+| 5 | Prompting as Engineering | coming soon | |
 
 Each lesson folder is a **complete, runnable snapshot** of MiniDesk at that point in the course.
 Folders never change after their video is published, so the code always matches what you saw on screen.
@@ -43,6 +44,9 @@ Run a lesson:
 
 ```bash
 python lessons/lesson-03-build-your-first-agent/minidesk_v0.py
+
+cd lessons/lesson-04-the-agent-loop-live
+python count_steps.py
 ```
 
 > API calls are billed per use. Each lesson's README says how many model calls one run makes.
@@ -56,7 +60,13 @@ ai-agents-from-scratch/
 ├── requirements.txt          ← shared dependencies
 ├── .gitignore
 └── lessons/
-    └── lesson-03-build-your-first-agent/
-        ├── README.md         ← what this lesson builds, how to run it, expected output
-        └── minidesk_v0.py    ← the code from the video
+    ├── lesson-03-build-your-first-agent/
+    │   ├── README.md         ← what this lesson builds, how to run it, expected output
+    │   └── minidesk_v0.py    ← the code from the video
+    └── lesson-04-the-agent-loop-live/
+        ├── README.md
+        ├── minidesk_v0.py    ← identical to Lesson 3
+        ├── count_steps.py    ← watches the agent and prints every trip
+        ├── trace_and_then.json
+        └── trace_and_if_then.json
 ```

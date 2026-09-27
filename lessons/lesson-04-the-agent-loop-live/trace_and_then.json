@@ -1,0 +1,60 @@
+{
+  "and_then": {
+    "ticket": "Hi, can you check on order A1001, and then A1002, and then A1003, and then A1004?",
+    "runs": [
+      {
+        "steps": 2,
+        "hit_max_steps": false,
+        "answer": "Here's what I found:\n\nA1001: Wireless Mouse, status delivered, total $24.99\n\nA1002: Mechanical Keyboard, status in transit, total $89.00\n\nA1003: No order found with this ID. Please double check the number.\n\nA1004: No order found with this ID. Please double check the number.\n\nLet me know if you'd like me to look into A1003 or A1004 again with a corrected ID, or if there's anything else I can help with.",
+        "trace": [
+          {
+            "trip": 1,
+            "stop_reason": "tool_use",
+            "asks": [
+              "look_up_order(order_id='A1001')",
+              "look_up_order(order_id='A1002')",
+              "look_up_order(order_id='A1003')",
+              "look_up_order(order_id='A1004')"
+            ],
+            "results": [
+              {
+                "order_id": "A1001",
+                "result": {
+                  "item": "Wireless Mouse",
+                  "status": "delivered",
+                  "total": 24.99
+                }
+              },
+              {
+                "order_id": "A1002",
+                "result": {
+                  "item": "Mechanical Keyboard",
+                  "status": "in transit",
+                  "total": 89.0
+                }
+              },
+              {
+                "order_id": "A1003",
+                "result": {
+                  "error": "no order found with id A1003"
+                }
+              },
+              {
+                "order_id": "A1004",
+                "result": {
+                  "error": "no order found with id A1004"
+                }
+              }
+            ]
+          },
+          {
+            "trip": 2,
+            "stop_reason": "end_turn",
+            "asks": [],
+            "results": []
+          }
+        ]
+      }
+    ]
+  }
+}

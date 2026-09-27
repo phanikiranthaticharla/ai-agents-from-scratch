@@ -1,6 +1,6 @@
 # Lesson 3 — Build Your First Agent
 
-📺 Video: [link coming soon]
+📺 **Watch the lesson:** [Build Your First Agent on YouTube](https://youtu.be/JpsG3ZiXJak)
 
 **MiniDesk v0**: a support agent with exactly one capability, looking up an order by its ID.
 No refunds, nothing that spends money. It exists to make one thing concrete: **the agent loop**.

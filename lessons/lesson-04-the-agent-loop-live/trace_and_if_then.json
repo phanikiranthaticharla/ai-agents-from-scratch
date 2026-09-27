@@ -1,0 +1,84 @@
+{
+  "and_if_then": {
+    "ticket": "Hi, can you check on order A1001, and if it's delivered, then A1002, and if that's in transit, then A1003, and if that's not found, then A1004?",
+    "runs": [
+      {
+        "steps": 5,
+        "hit_max_steps": false,
+        "answer": "Here's a summary of what I found:\n\nA1001: Wireless Mouse, status delivered, total $24.99\nA1002: Mechanical Keyboard, status in transit, total $89.00\nA1003: not found in our system\nA1004: also not found in our system\n\nSince A1003 came back not found, the chain led me to check A1004 as well, but that one wasn't found either. Would you like me to help with anything else, such as double checking those order IDs for typos?",
+        "trace": [
+          {
+            "trip": 1,
+            "stop_reason": "tool_use",
+            "asks": [
+              "look_up_order(order_id='A1001')"
+            ],
+            "results": [
+              {
+                "order_id": "A1001",
+                "result": {
+                  "item": "Wireless Mouse",
+                  "status": "delivered",
+                  "total": 24.99
+                }
+              }
+            ]
+          },
+          {
+            "trip": 2,
+            "stop_reason": "tool_use",
+            "asks": [
+              "look_up_order(order_id='A1002')"
+            ],
+            "results": [
+              {
+                "order_id": "A1002",
+                "result": {
+                  "item": "Mechanical Keyboard",
+                  "status": "in transit",
+                  "total": 89.0
+                }
+              }
+            ]
+          },
+          {
+            "trip": 3,
+            "stop_reason": "tool_use",
+            "asks": [
+              "look_up_order(order_id='A1003')"
+            ],
+            "results": [
+              {
+                "order_id": "A1003",
+                "result": {
+                  "error": "no order found with id A1003"
+                }
+              }
+            ]
+          },
+          {
+            "trip": 4,
+            "stop_reason": "tool_use",
+            "asks": [
+              "look_up_order(order_id='A1004')"
+            ],
+            "results": [
+              {
+                "order_id": "A1004",
+                "result": {
+                  "error": "no order found with id A1004"
+                }
+              }
+            ]
+          },
+          {
+            "trip": 5,
+            "stop_reason": "end_turn",
+            "asks": [],
+            "results": []
+          }
+        ]
+      }
+    ]
+  }
+}
