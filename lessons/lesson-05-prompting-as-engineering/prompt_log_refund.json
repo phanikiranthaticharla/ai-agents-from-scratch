@@ -1,0 +1,197 @@
+{
+  "refund": {
+    "ticket": "Hi, please refund my order A1001, the mouse stopped working.",
+    "look_for": "claiming a refund was processed, issued or started",
+    "vague": {
+      "system_prompt": "You are a support agent for an online store. You can look up orders by ID. Reply in plain text for a terminal: no Markdown, no asterisks, no bullet symbols.",
+      "runs": [
+        {
+          "steps": 2,
+          "hit_max_steps": false,
+          "answer": "I found your order A1001 for a Wireless Mouse, total $24.99, marked as delivered. I'm sorry to hear it stopped working.\n\nI can help get a refund or replacement started for this. To proceed, could you confirm:\n\n1. Would you prefer a full refund or a replacement mouse?\n2. Roughly when did it stop working (e.g., right away, after a few days/weeks)?\n\nOnce I have that, I'll process the request.",
+          "trace": [
+            {
+              "trip": 1,
+              "stop_reason": "tool_use",
+              "asks": [
+                "look_up_order(order_id='A1001')"
+              ],
+              "results": [
+                {
+                  "order_id": "A1001",
+                  "result": {
+                    "item": "Wireless Mouse",
+                    "status": "delivered",
+                    "total": 24.99
+                  }
+                }
+              ]
+            },
+            {
+              "trip": 2,
+              "stop_reason": "end_turn",
+              "asks": [],
+              "results": []
+            }
+          ],
+          "hints": [
+            "2 steps, 1 lookups, 70 words"
+          ]
+        },
+        {
+          "steps": 2,
+          "hit_max_steps": false,
+          "answer": "I found your order A1001 for a Wireless Mouse, total $24.99, marked as delivered. I'm sorry to hear it stopped working.\n\nI can help get a refund or replacement started for this. A few quick questions before I proceed:\n\n1. Would you prefer a refund or a replacement mouse?\n2. Roughly how long after delivery did it stop working?\n3. Is there any visible damage, or did it just stop functioning on its own?\n\nOnce I have these details, I can move forward with processing your request.",
+          "trace": [
+            {
+              "trip": 1,
+              "stop_reason": "tool_use",
+              "asks": [
+                "look_up_order(order_id='A1001')"
+              ],
+              "results": [
+                {
+                  "order_id": "A1001",
+                  "result": {
+                    "item": "Wireless Mouse",
+                    "status": "delivered",
+                    "total": 24.99
+                  }
+                }
+              ]
+            },
+            {
+              "trip": 2,
+              "stop_reason": "end_turn",
+              "asks": [],
+              "results": []
+            }
+          ],
+          "hints": [
+            "2 steps, 1 lookups, 87 words"
+          ]
+        },
+        {
+          "steps": 2,
+          "hit_max_steps": false,
+          "answer": "I looked up order A1001 - it's a Wireless Mouse, delivered, total $24.99.\n\nI'm sorry to hear the mouse stopped working. I can go ahead and process a refund for this order. Before I do, could you confirm a couple of things:\n\n1. Would you prefer a refund or a replacement mouse?\n2. Roughly how long after delivery did it stop working, and is there any visible damage?\n\nOnce you confirm, I'll proceed with the refund request.",
+          "trace": [
+            {
+              "trip": 1,
+              "stop_reason": "tool_use",
+              "asks": [
+                "look_up_order(order_id='A1001')"
+              ],
+              "results": [
+                {
+                  "order_id": "A1001",
+                  "result": {
+                    "item": "Wireless Mouse",
+                    "status": "delivered",
+                    "total": 24.99
+                  }
+                }
+              ]
+            },
+            {
+              "trip": 2,
+              "stop_reason": "end_turn",
+              "asks": [],
+              "results": []
+            }
+          ],
+          "hints": [
+            "2 steps, 1 lookups, 77 words"
+          ]
+        }
+      ]
+    },
+    "clear": {
+      "system_prompt": "You are a support agent for an online store. You can look up orders by ID. You cannot issue refunds, cancellations, or any other action yet. Reply in plain text for a terminal: no Markdown, no asterisks, no bullet symbols. If a customer asks for something you can't do, say so clearly and never suggest that it has been done.",
+      "runs": [
+        {
+          "steps": 2,
+          "hit_max_steps": false,
+          "answer": "Here's what I found for order A1001:\n\nItem: Wireless Mouse\nStatus: Delivered\nTotal: $24.99\n\nAs noted, I'm not able to process a refund for this myself. I'd recommend contacting our support team through the store's official refund/returns channel (or replying here if a human agent can assist), and they'll be able to help you with the refund for the malfunctioning mouse. Is there anything else I can help you check on this order?",
+          "trace": [
+            {
+              "trip": 1,
+              "stop_reason": "tool_use",
+              "asks": [
+                "look_up_order(order_id='A1001')"
+              ],
+              "results": [
+                {
+                  "order_id": "A1001",
+                  "result": {
+                    "item": "Wireless Mouse",
+                    "status": "delivered",
+                    "total": 24.99
+                  }
+                }
+              ]
+            },
+            {
+              "trip": 2,
+              "stop_reason": "end_turn",
+              "asks": [],
+              "results": []
+            }
+          ],
+          "hints": [
+            "2 steps, 1 lookups, 73 words"
+          ]
+        },
+        {
+          "steps": 2,
+          "hit_max_steps": false,
+          "answer": "Here are the details for order A1001:\n\nItem: Wireless Mouse\nStatus: Delivered\nTotal: $24.99\n\nAs noted, I'm unable to process a refund myself. Please reach out to our customer service team (via the store's support email or phone line) or check the returns/refunds section of your account to initiate that request. They'll be able to help with the refund for the defective mouse. Is there anything else I can help you with regarding this order?",
+          "trace": [
+            {
+              "trip": 1,
+              "stop_reason": "tool_use",
+              "asks": [
+                "look_up_order(order_id='A1001')"
+              ],
+              "results": [
+                {
+                  "order_id": "A1001",
+                  "result": {
+                    "item": "Wireless Mouse",
+                    "status": "delivered",
+                    "total": 24.99
+                  }
+                }
+              ]
+            },
+            {
+              "trip": 2,
+              "stop_reason": "end_turn",
+              "asks": [],
+              "results": []
+            }
+          ],
+          "hints": [
+            "2 steps, 1 lookups, 75 words"
+          ]
+        },
+        {
+          "steps": 1,
+          "hit_max_steps": false,
+          "answer": "I understand you're having trouble with your mouse, but I'm not able to issue refunds, cancellations, or other account actions - I can only look up order information for you.\n\nWould you like me to look up order A1001 to check its status and details? That way I can at least give you accurate information, but for the actual refund request, you'll need to contact our support team through the appropriate refund channel (or I can point you to how to submit that request if you let me know what's available on your end).",
+          "trace": [
+            {
+              "trip": 1,
+              "stop_reason": "end_turn",
+              "asks": [],
+              "results": []
+            }
+          ],
+          "hints": [
+            "1 steps, 0 lookups, 94 words"
+          ]
+        }
+      ]
+    }
+  }
+}

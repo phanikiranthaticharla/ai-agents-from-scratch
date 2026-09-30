@@ -96,4 +96,4 @@ MiniDesk gets that check in the guardrails lessons later in the course.
 - Add a couple more "if"s to `and_if_then`. With `MAX_STEPS = 6`, when does the circuit breaker fire, and why?
 - Ask about two orders where the second depends on the first, and two where it doesn't. Can you predict the trips?
 
-Next: [Lesson 5 — Prompting as Engineering](../../README.md#lessons) (coming soon).
+Next: [Lesson 5 — Prompting as Engineering](https://youtu.be/z3aIJCzRs0w) · [code](../lesson-05-prompting-as-engineering)

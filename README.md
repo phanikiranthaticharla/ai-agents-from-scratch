@@ -14,7 +14,8 @@ The running example is **MiniDesk**, a customer-support agent. It starts tiny an
 | 2 | Underneath the Agent | [▶ watch](https://youtu.be/lrfp7W4Qs3Q) | concepts only |
 | 3 | Build Your First Agent | [▶ watch](https://youtu.be/JpsG3ZiXJak) | [`lessons/lesson-03-build-your-first-agent`](lessons/lesson-03-build-your-first-agent) |
 | 4 | The Agent Loop, Live | [▶ watch](https://youtu.be/IT-3lbmWOeM) | [`lessons/lesson-04-the-agent-loop-live`](lessons/lesson-04-the-agent-loop-live) |
-| 5 | Prompting as Engineering | coming soon | |
+| 5 | Prompting as Engineering | [▶ watch](https://youtu.be/z3aIJCzRs0w) | [`lessons/lesson-05-prompting-as-engineering`](lessons/lesson-05-prompting-as-engineering) |
+| 6 | Tool Use & Function Calling | coming soon | |
 
 Each lesson folder is a **complete, runnable snapshot** of MiniDesk at that point in the course.
 Folders never change after their video is published, so the code always matches what you saw on screen.
@@ -47,6 +48,9 @@ python lessons/lesson-03-build-your-first-agent/minidesk_v0.py
 
 cd lessons/lesson-04-the-agent-loop-live
 python count_steps.py
+
+cd ../lesson-05-prompting-as-engineering
+python try_prompts.py --exp refund --runs 3
 ```
 
 > API calls are billed per use. Each lesson's README says how many model calls one run makes.
@@ -63,10 +67,15 @@ ai-agents-from-scratch/
     ├── lesson-03-build-your-first-agent/
     │   ├── README.md         ← what this lesson builds, how to run it, expected output
     │   └── minidesk_v0.py    ← the code from the video
-    └── lesson-04-the-agent-loop-live/
+    ├── lesson-04-the-agent-loop-live/
+    │   ├── README.md
+    │   ├── minidesk_v0.py    ← identical to Lesson 3
+    │   ├── count_steps.py    ← watches the agent and prints every trip
+    │   ├── trace_and_then.json
+    │   └── trace_and_if_then.json
+    └── lesson-05-prompting-as-engineering/
         ├── README.md
         ├── minidesk_v0.py    ← identical to Lesson 3
-        ├── count_steps.py    ← watches the agent and prints every trip
-        ├── trace_and_then.json
-        └── trace_and_if_then.json
+        ├── try_prompts.py    ← same agent, different system prompts, side by side
+        └── prompt_log_refund.json
 ```
