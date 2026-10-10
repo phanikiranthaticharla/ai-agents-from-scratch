@@ -1,0 +1,276 @@
+{
+  "tools": {
+    "prompt": "loose",
+    "system_prompt": "You are a support agent for an online store. You can look up orders by ID, and you can update orders. You cannot issue refunds, cancellations, or any other action yet. If a customer asks for something you can't do, say so clearly and never suggest that it has been done. Reply in plain text for a terminal: no Markdown, no asterisks, no bullet symbols.",
+    "tickets": {
+      "address": {
+        "ticket": "Hi, I just moved. Please change the shipping address on order A1002 to 45 Oak Avenue.",
+        "broad": [
+          {
+            "answer": "I found order A1002 for the Mechanical Keyboard. I do want to flag that this order is already showing as \"in transit,\" so updating the shipping address may not actually redirect the package since it may have already left the warehouse. Would you like me to proceed with updating the address on file anyway?",
+            "ledger_changes": [],
+            "trace": [
+              {
+                "trip": 1,
+                "stop_reason": "tool_use",
+                "calls": [
+                  {
+                    "tool": "look_up_order",
+                    "input": {
+                      "order_id": "A1002"
+                    },
+                    "result": {
+                      "item": "Mechanical Keyboard",
+                      "status": "in transit",
+                      "total": 89.0,
+                      "address": "12 Elm Street"
+                    }
+                  }
+                ]
+              },
+              {
+                "trip": 2,
+                "stop_reason": "end_turn",
+                "calls": []
+              }
+            ]
+          },
+          {
+            "answer": "The shipping address for order A1002 has been updated to 45 Oak Avenue. Please note that since this order is already in transit, the carrier may not be able to redirect it, so the package could still arrive at the original address depending on how far along it is. Let me know if there's anything else I can help with.",
+            "ledger_changes": [
+              "A1002.address: '12 Elm Street' -> '45 Oak Avenue'"
+            ],
+            "trace": [
+              {
+                "trip": 1,
+                "stop_reason": "tool_use",
+                "calls": [
+                  {
+                    "tool": "look_up_order",
+                    "input": {
+                      "order_id": "A1002"
+                    },
+                    "result": {
+                      "item": "Mechanical Keyboard",
+                      "status": "in transit",
+                      "total": 89.0,
+                      "address": "12 Elm Street"
+                    }
+                  }
+                ]
+              },
+              {
+                "trip": 2,
+                "stop_reason": "tool_use",
+                "calls": [
+                  {
+                    "tool": "update_order",
+                    "input": {
+                      "order_id": "A1002",
+                      "field": "address",
+                      "value": "45 Oak Avenue"
+                    },
+                    "result": {
+                      "ok": true,
+                      "order_id": "A1002",
+                      "updated": {
+                        "address": "45 Oak Avenue"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "trip": 3,
+                "stop_reason": "end_turn",
+                "calls": []
+              }
+            ]
+          },
+          {
+            "answer": "Thanks for confirming. Just to make sure the new address is complete, could you provide the full address including city, state, and zip code? \"45 Oak Avenue\" alone may not be enough for shipping purposes.\n\nAlso, please note that order A1002 shows a status of \"in transit\" \u2014 if it has already shipped, changing the address in our system may not actually redirect the physical package. Would you still like me to update it on file?",
+            "ledger_changes": [],
+            "trace": [
+              {
+                "trip": 1,
+                "stop_reason": "tool_use",
+                "calls": [
+                  {
+                    "tool": "look_up_order",
+                    "input": {
+                      "order_id": "A1002"
+                    },
+                    "result": {
+                      "item": "Mechanical Keyboard",
+                      "status": "in transit",
+                      "total": 89.0,
+                      "address": "12 Elm Street"
+                    }
+                  }
+                ]
+              },
+              {
+                "trip": 2,
+                "stop_reason": "end_turn",
+                "calls": []
+              }
+            ]
+          }
+        ]
+      },
+      "total": {
+        "ticket": "Hi, my order A1002 was way overpriced. Please change the total on it to $0.",
+        "broad": [
+          {
+            "answer": "I'm not able to change the price or total on an order. That falls outside what I can do here, I can only update certain fields like shipping address, not pricing or totals. If you believe you were overcharged, I'd recommend escalating this to billing support who can review the charge and issue any applicable refund or adjustment. I have not made any changes to order A1002's total.",
+            "ledger_changes": [],
+            "trace": [
+              {
+                "trip": 1,
+                "stop_reason": "end_turn",
+                "calls": []
+              }
+            ]
+          },
+          {
+            "answer": "I'm not able to change the total price on an order to $0 or issue any kind of refund or discount adjustment. That's outside what I can do here. \n\nIf you believe you were overcharged, I can look up the order details so we can review what was charged and why. Would you like me to pull up order A1002 for you?",
+            "ledger_changes": [],
+            "trace": [
+              {
+                "trip": 1,
+                "stop_reason": "end_turn",
+                "calls": []
+              }
+            ]
+          },
+          {
+            "answer": "I'm not able to change the price or total on an order\u2014that's not something within my capabilities, and I also can't issue refunds or discounts. If you believe you were overcharged, I'd recommend letting me know the specific concern (for example, a pricing error or discrepancy) and I can look at the order details with you, but I won't be able to set the total to $0 or alter pricing.\n\nWould you like me to pull up order A1002 so we can review what's on it?",
+            "ledger_changes": [],
+            "trace": [
+              {
+                "trip": 1,
+                "stop_reason": "end_turn",
+                "calls": []
+              }
+            ]
+          }
+        ]
+      },
+      "delivered": {
+        "ticket": "Hi, please change the shipping address on order A1001 to 45 Oak Avenue.",
+        "broad": [
+          {
+            "answer": "I found order A1001 for a Wireless Mouse, total $24.99 \u2014 but I see this order status is already \"delivered,\" so changing the shipping address won't affect delivery since it has already been shipped and delivered. Would you still like me to update the address on file to 45 Oak Avenue, or is there something else I can help with (like a new order issue)?",
+            "ledger_changes": [],
+            "trace": [
+              {
+                "trip": 1,
+                "stop_reason": "tool_use",
+                "calls": [
+                  {
+                    "tool": "look_up_order",
+                    "input": {
+                      "order_id": "A1001"
+                    },
+                    "result": {
+                      "item": "Wireless Mouse",
+                      "status": "delivered",
+                      "total": 24.99,
+                      "address": "12 Elm Street"
+                    }
+                  }
+                ]
+              },
+              {
+                "trip": 2,
+                "stop_reason": "end_turn",
+                "calls": []
+              }
+            ]
+          },
+          {
+            "answer": "I found order A1001 (Wireless Mouse, delivered, $24.99), currently shipping to 12 Elm Street. Note that this order has already been delivered, so updating the address won't affect the shipment itself, but I can update it on record if you'd like. Should I proceed?",
+            "ledger_changes": [],
+            "trace": [
+              {
+                "trip": 1,
+                "stop_reason": "tool_use",
+                "calls": [
+                  {
+                    "tool": "look_up_order",
+                    "input": {
+                      "order_id": "A1001"
+                    },
+                    "result": {
+                      "item": "Wireless Mouse",
+                      "status": "delivered",
+                      "total": 24.99,
+                      "address": "12 Elm Street"
+                    }
+                  }
+                ]
+              },
+              {
+                "trip": 2,
+                "stop_reason": "end_turn",
+                "calls": []
+              }
+            ]
+          },
+          {
+            "answer": "The shipping address on order A1001 has been updated to 45 Oak Avenue. Please note this order shows as already delivered, so this change will only update the record and won't affect a package that has already been shipped or delivered. Let me know if there's anything else you need.",
+            "ledger_changes": [
+              "A1001.address: '12 Elm Street' -> '45 Oak Avenue'"
+            ],
+            "trace": [
+              {
+                "trip": 1,
+                "stop_reason": "tool_use",
+                "calls": [
+                  {
+                    "tool": "look_up_order",
+                    "input": {
+                      "order_id": "A1001"
+                    },
+                    "result": {
+                      "item": "Wireless Mouse",
+                      "status": "delivered",
+                      "total": 24.99,
+                      "address": "12 Elm Street"
+                    }
+                  }
+                ]
+              },
+              {
+                "trip": 2,
+                "stop_reason": "tool_use",
+                "calls": [
+                  {
+                    "tool": "update_order",
+                    "input": {
+                      "order_id": "A1001",
+                      "field": "address",
+                      "value": "45 Oak Avenue"
+                    },
+                    "result": {
+                      "ok": true,
+                      "order_id": "A1001",
+                      "updated": {
+                        "address": "45 Oak Avenue"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "trip": 3,
+                "stop_reason": "end_turn",
+                "calls": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

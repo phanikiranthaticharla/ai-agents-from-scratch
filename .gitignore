@@ -16,3 +16,5 @@ Thumbs.db
 
 # local run logs (count_steps.py overwrites this on every run)
 trace_log.json
+prompt_log.json
+tools_log.json

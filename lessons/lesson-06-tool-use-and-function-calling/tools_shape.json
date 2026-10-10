@@ -1,0 +1,46 @@
+{
+  "shape": [
+    {
+      "ticket": "Hi, can you check on order A1001?",
+      "prose": "**Category:** order_status\n**Urgency:** low",
+      "forced": {
+        "category": "order_status",
+        "urgency": "low",
+        "order_ids": [
+          "A1001"
+        ]
+      }
+    },
+    {
+      "ticket": "My keyboard A1002 still hasn't arrived and I need it for work tomorrow!!",
+      "prose": "**Category:** order_status\n**Urgency:** high",
+      "forced": {
+        "category": "order_status",
+        "urgency": "high",
+        "order_ids": [
+          "A1002"
+        ]
+      }
+    },
+    {
+      "ticket": "Please refund my order A1001, the mouse stopped working.",
+      "prose": "**Category:** refund_request\n**Urgency:** low",
+      "forced": {
+        "category": "refund_request",
+        "urgency": "high",
+        "order_ids": [
+          "A1001"
+        ]
+      }
+    },
+    {
+      "ticket": "Do you sell gift cards?",
+      "prose": "**Category:** other\n**Urgency:** low",
+      "forced": {
+        "category": "other",
+        "urgency": "low",
+        "order_ids": []
+      }
+    }
+  ]
+}
